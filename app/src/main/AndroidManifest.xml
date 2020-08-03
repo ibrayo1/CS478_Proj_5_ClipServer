@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.clipserver">
+
+    <permission android:name="com.example.ClipService.GEN_ID" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme">
+        <service
+            android:name=".ClipService"
+            android:exported="true"
+            android:stopWithTask="false"
+            android:permission="com.example.ClipService.GEN_ID" >
+            <intent-filter>
+                <action android:name="com.example.clipcommon.ClipGenerator" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
